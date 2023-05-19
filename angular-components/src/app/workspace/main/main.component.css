@@ -1,0 +1,11 @@
+main{
+  border: solid 1px orange;
+  margin: 4px;
+  height: 100vh;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 4px;
+}
