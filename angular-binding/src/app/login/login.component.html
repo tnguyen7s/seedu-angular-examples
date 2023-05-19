@@ -1,0 +1,19 @@
+<label for="username">Username
+  <!--Two way binding-->
+  <input type="text" id="username" [(ngModel)]="username">
+</label>
+
+<div style="margin-top: 14px;">
+  <label for="pwd">
+    Password
+      <!--Two way binding-->
+    <input type="password" name="pwd" id="pwd" [(ngModel)]="pwd"/>
+  </label>
+</div>
+
+<!--string interpolation-->
+<p>User enters the username {{username}}</p>
+<p>User enters the password {{pwd}}</p>
+
+<!-- event binding-->
+<button (click)="onLogin()" [disabled]="!username || !pwd">Login</button>

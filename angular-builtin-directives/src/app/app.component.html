@@ -1,0 +1,20 @@
+<input type="number" name="number" id="number" [(ngModel)]="n">
+<!-- ngStyle -->
+<p [ngStyle]="{'color': colorTheNumber()}">{{n}}</p>
+
+<!--ngIf-->
+<div *ngIf="n; else noInput">
+  <p *ngIf="n%2!=0; else evenCase">This is an odd number</p>
+  <ng-template #evenCase>
+    <p >This is an even number</p>
+  </ng-template>
+</div>
+
+<ng-template #noInput>
+  <p>Please input a number!</p>
+</ng-template>
+
+<!-- ngFor, ngclass-->
+<ul>
+  <li *ngFor="let n of numbers; let i=index;" >Number {{i+1}} in the list: <span [ngClass]="{'evenNumber': n%2==0}">{{n}}</span></li>
+</ul>
