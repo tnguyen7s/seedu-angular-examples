@@ -1,0 +1,7 @@
+<app-navigation (currentPage)="onGetCurrentPage($event)"></app-navigation>
+
+<!--use one of the two-->
+<app-bookshelf *ngIf="currentPage=='bookshelf'; else renderedLibrary"></app-bookshelf>
+<ng-template #renderedLibrary>
+  <app-library></app-library>
+</ng-template>

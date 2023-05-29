@@ -1,0 +1,7 @@
+<!-- Two way binding to get the subject-->
+<input type="text" name="search" id="search" placeholder="Search by Subject" [(ngModel)]="subject">
+
+<!-- Event binding -->
+<button type="button" (click)="onGetBookBySubject()">Search</button>
+
+<app-book-card *ngFor="let b of booksBySearchedSubject" [book]="b"></app-book-card>

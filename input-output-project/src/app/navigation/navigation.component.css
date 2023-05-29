@@ -1,0 +1,10 @@
+.nav{
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  margin-bottom: 20px;
+  border: 1px solid gray;
+  padding: 4px;
+  justify-content: flex-start
+}
+
