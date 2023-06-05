@@ -1,0 +1,5 @@
+
+<p *ngIf="curLanguage=='en' else vn">together we mend the broken</p>
+<ng-template #vn>cùng nhau chúng ta hàn gắn những mảnh vỡ tâm hồn</ng-template>
+
+<p>{{curLanguage=='en'? 'together we mend the broken': 'cùng nhau chúng ta hàn gắn những mảnh vỡ tâm hồn'}}</p>

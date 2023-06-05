@@ -1,0 +1,18 @@
+.right{
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 20px;
+  border-bottom: 1px solid black;
+}
+
+button{
+  padding: 10px;
+}
