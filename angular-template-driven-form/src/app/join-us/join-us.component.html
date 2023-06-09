@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSubmitForm()">
+  <label for="name">FullName</label>
+  <input type="text" id="name" name="name" [(ngModel)]="stakeholderInput.name"/>
+
+  <label for="role">You will be a</label>
+  <select name="role" id="role" [(ngModel)]="stakeholderInput.role">
+    <option value="investor">investor</option>
+    <option value="sponsor">sponsor</option>
+    <option value="partner">partner</option>
+  </select>
+
+  <label for="organization">Organization Name (optional)</label>
+  <input type="text" id="organization" name="organization" [(ngModel)]="stakeholderInput.organization"/>
+
+  <label for="email">Email Address</label>
+  <input type="text" id="email" name="email" [(ngModel)]="stakeholderInput.email" email #email="ngModel"/>
+
+  <button type="submit" [disabled]="!stakeholderInput.name || !stakeholderInput.role || !stakeholderInput.email || !email.valid" [ngClass]="{'enabled': stakeholderInput.name && stakeholderInput.role && stakeholderInput.email && email.valid }">SUBMIT</button>
+</form>
