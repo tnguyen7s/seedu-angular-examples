@@ -1,0 +1,10 @@
+.user-info-container{
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+button{
+  height: fit-content;
+  padding: 10px 20px;
+}

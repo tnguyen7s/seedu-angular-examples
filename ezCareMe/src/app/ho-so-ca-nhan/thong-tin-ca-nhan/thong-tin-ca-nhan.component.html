@@ -1,0 +1,123 @@
+<!--Part 1: display info-->
+<div class="user-info-container" *ngIf="!showForm">
+  <div>
+    <div class="group">
+      <label>Họ và tên</label>
+      <p>{{user.name? user.name:'--Không có dữ liệu'}}</p>
+    </div>
+
+    <div class="group">
+      <label>Ngày sinh</label>
+      <p>{{user.birthdate? user.birthdate:'--Không có dữ liệu'}}</p>
+    </div>
+
+    <div class="group">
+      <label>Gioi tính</label>
+      <p>{{user.gender? user.gender:'--Không có dữ liệu'}}</p>
+    </div>
+
+    <div class="group">
+      <label>Số điện thoại</label>
+      <p>{{user.phone? user.phone:'--Không có dữ liệu'}}</p>
+    </div>
+
+    <div class="group">
+      <label>Email</label>
+      <p>{{user.email? user.email:'--Không có dữ liệu'}}</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="group">
+      <label>Tình trạng hôn nhân</label>
+      <p>{{user.marriageStatus? user.marriageStatus:'--Không có dữ liệu'}}</p>
+    </div>
+
+    <div class="group">
+      <label>Nghề nghiệp</label>
+      <p>{{user.job? user.job:'--Không có dữ liệu'}}</p>
+    </div>
+
+    <div class="group">
+      <label>Trình độ học vấn</label>
+      <p>{{user.edu? user.edu:'--Không có dữ liệu'}}</p>
+    </div>
+
+    <div class="group">
+      <label>Địa chỉ</label>
+      <p>{{user.address? user.address:'--Không có dữ liệu'}}</p>
+    </div>
+  </div>
+
+  <button (click)="onOpenForm()">Chỉnh sửa</button>
+</div>
+
+
+
+<!--Part 2: form-->
+<div class="user-info-container" *ngIf="showForm">
+  <div>
+    <div class="group">
+      <label for="name">Họ và tên</label>
+      <input type="text" id="name" name="name" [(ngModel)]="user.name" [ngStyle]="{'border': !user.name&&showInputError? 'red 1px solid':'gray 1px solid'}">
+      <span class="input-error" *ngIf="!user.name && showInputError">Thông tin bắt buộc</span>
+    </div>
+
+    <div class="group">
+      <label for="birthdate">Ngày sinh</label>
+      <input type="date" name="birthdate" id="birthdate" [(ngModel)]="user.birthdate" [ngStyle]="{'border': !user.birthdate&&showInputError? 'red 1px solid':'gray 1px solid'}">
+      <span class="input-error" *ngIf="!user.birthdate && showInputError">Thông tin bắt buộc</span>
+    </div>
+
+    <div class="group">
+      <label for="gender">Gioi tính</label>
+      <select name="gender" id="gender" [(ngModel)]="user.gender" [ngStyle]="{'border': !user.gender&&showInputError? 'red 1px solid':'gray 1px solid'}">
+        <option value="name">nam</option>
+        <option value="nữ">nữ</option>
+        <option value="khác">khác</option>
+      </select>
+      <span class="input-error" *ngIf="!user.gender && showInputError">Thông tin bắt buộc</span>
+    </div>
+
+    <div class="group">
+      <label for="phone">Số điện thoại</label>
+      <input type="tel" name="phone" id="phone" [(ngModel)]="user.phone" [ngStyle]="{'border': !user.phone&&showInputError? 'red 1px solid':'gray 1px solid'}">
+      <span class="input-error" *ngIf="!user.phone && showInputError">Thông tin bắt buộc</span>
+    </div>
+
+    <div class="group">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" [(ngModel)]="user.email" [ngStyle]="{'border': !user.email&&showInputError? 'red 1px solid':'gray 1px solid'}">
+      <span class="input-error" *ngIf="!user.email && showInputError">Thông tin bắt buộc</span>
+    </div>
+  </div>
+
+  <div>
+    <div class="group">
+      <label for="marriage">Tình trạng hôn nhân</label>
+      <select name="marriage" id="marriage" [(ngModel)]="user.marriageStatus">
+        <option value="độc thân">Độc thân</option>
+        <option value="kết hôn">Kết hôn</option>
+        <option value="ly thân">Ly thân</option>
+        <option value="ly hôn">Ly hôn</option>
+      </select>
+    </div>
+
+    <div class="group">
+      <label for="job">Nghề nghiệp</label>
+      <input type="text" name="job" id="job" [(ngModel)]="user.job">
+    </div>
+
+    <div class="group">
+      <label for="edu">Trình độ học vấn</label>
+      <input id="edu" name="edu" [(ngModel)]="user.edu"/>
+    </div>
+
+    <div class="group">
+      <label for="address">Địa chỉ</label>
+      <input id="address" name="address" [(ngModel)]="user.address"/>
+    </div>
+  </div>
+
+  <button type="submit" (click)="onSaveForm()">Lưu</button>
+</div>
