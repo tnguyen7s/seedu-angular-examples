@@ -1,0 +1,7 @@
+.left{
+  width: 240px;
+}
+main{
+  display: flex;
+  flex-direction: row;
+}

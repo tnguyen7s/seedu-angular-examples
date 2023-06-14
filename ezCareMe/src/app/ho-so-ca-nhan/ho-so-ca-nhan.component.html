@@ -1,1 +1,14 @@
-<app-thong-tin-ca-nhan></app-thong-tin-ca-nhan>
+<h1>Hồ sơ cá nhân</h1>
+<main>
+  <div class="left">
+    <app-ho-so-ca-nhan-navbar (hoSoCaNhanPage)="pageToShow=$event"></app-ho-so-ca-nhan-navbar>
+  </div>
+  <div class="right">
+    <!--1.thong-tin-ca-nhan 2.lien-he-khan-cap 3.suc-khoe-tinh-than 4.suc-khoe-the-chat 5.tinh-trang-su-dung-chat-->
+    <app-thong-tin-ca-nhan *ngIf="pageToShow==1"></app-thong-tin-ca-nhan>
+    <app-lien-he-khan-cap *ngIf="pageToShow==2"></app-lien-he-khan-cap>
+    <app-suc-khoe-tinh-than *ngIf="pageToShow==3"></app-suc-khoe-tinh-than>
+    <app-suc-khoe-the-chat *ngIf="pageToShow==4"></app-suc-khoe-the-chat>
+    <app-tinh-trang-su-dung-chat *ngIf="pageToShow==5"></app-tinh-trang-su-dung-chat>
+  </div>
+</main>

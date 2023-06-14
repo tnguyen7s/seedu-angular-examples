@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./ho-so-ca-nhan.component.css']
 })
 export class HoSoCaNhanComponent {
-
+  pageToShow = 1
 }

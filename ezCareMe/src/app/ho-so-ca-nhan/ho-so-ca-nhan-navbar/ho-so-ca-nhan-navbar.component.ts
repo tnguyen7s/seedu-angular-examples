@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-ho-so-ca-nhan-navbar',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./ho-so-ca-nhan-navbar.component.css']
 })
 export class HoSoCaNhanNavbarComponent {
+  @Output() hoSoCaNhanPage = new EventEmitter<number>();
+  pageNumber = 1;
 
+  onChangeToPage(pageNum: number){
+    this.hoSoCaNhanPage.emit(pageNum);
+    this.pageNumber=pageNum;
+  }
 }

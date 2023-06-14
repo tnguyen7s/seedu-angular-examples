@@ -1,1 +1,7 @@
-<p>ho-so-ca-nhan-navbar works!</p>
+<div class="container">
+  <button (click)="onChangeToPage(1)" [ngStyle]="{'font-weight': pageNumber==1?  600:500}">Thông tin cá nhân</button>
+  <button (click)="onChangeToPage(2)" [ngStyle]="{'font-weight': pageNumber==2?  600:500}">Người liên hệ khẩn cấp</button>
+  <button (click)="onChangeToPage(3)" [ngStyle]="{'font-weight': pageNumber==3?  600:500}">Sức khỏe tinh thần</button>
+  <button (click)="onChangeToPage(4)" [ngStyle]="{'font-weight': pageNumber==4?  600:500}">Sức khỏe thể chất</button>
+  <button (click)="onChangeToPage(5)" [ngStyle]="{'font-weight': pageNumber==5?  600:500}">Tình trạng sử dụng chất</button>
+</div>
